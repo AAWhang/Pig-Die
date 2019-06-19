@@ -39,6 +39,21 @@ function cpuE() {
   }
 }
 
+function cpuH() {
+  var cpuTurns;
+      if (players === 1) {
+        while (score < 20 && players === 1) {
+          if (players === 1) {
+            buttonRoll();
+          }
+
+        }
+        if (players === 1) {
+          buttonHold();
+        }
+  }
+}
+
 function buttonRoll()
 {
   var x = Math.floor((Math.random() * 6) + 1);
@@ -76,13 +91,14 @@ function buttonHold() {
 
   $("button#roll").click(function() {
     buttonRoll()
-    cpuE();
+    // cpuE();
+    cpuH();
   });
 
   $("button#hold").click(function() {
     buttonHold()
-      cpuE();
-
+      // cpuE();
+      cpuH();
   });
 
 
