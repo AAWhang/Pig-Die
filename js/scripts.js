@@ -16,12 +16,25 @@ if (players === 0) {
 }
 }
 
-
+function reset() {
+  total = 0;
+  total2 = 0;
+  score = 0;
+  x = 0;
+  y = 0;
+  document.getElementById("turnScore").innerHTML = score;
+  document.getElementById("total").innerHTML = total;
+  document.getElementById("total2").innerHTML = total2;
+  document.getElementById("dice1").innerHTML = x + " die 1";
+  document.getElementById("dice2").innerHTML = y + " die 2";
+}
 function win() {
   if (total >= 100) {
-    alert("P1 Win!");
+    alert("P1 Win! Score: " + total);
+    reset();
   } else if (total2 >= 100) {
-    alert("P2 Win!");
+    alert("P2 Win! Score: " + total2);
+    reset();
   }
 }
 
@@ -41,17 +54,13 @@ function cpuE() {
 
 function cpuH() {
   var cpuTurns;
-      if (players === 1) {
-        while (score < 20 && players === 1) {
-          if (players === 1) {
+        while (score < 20 && players === 1 && score + total2 < 100) {
             buttonRoll();
-          }
 
         }
         if (players === 1) {
           buttonHold();
         }
-  }
 }
 
 function buttonRoll()
