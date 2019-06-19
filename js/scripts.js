@@ -72,7 +72,9 @@ function modeselect() {
   }
 
 }
-
+function dieOut(die) {
+  return "<img src='img/die" + die + ".png'>";
+}
 
 function buttonRoll()
 {
@@ -85,8 +87,8 @@ function buttonRoll()
     score += x;
     score += y;
   }
-  document.getElementById("dice1").innerHTML = x + " die 1";
-  document.getElementById("dice2").innerHTML = y + " die 2";
+  document.getElementById("dice1").innerHTML = dieOut(x);
+  document.getElementById("dice2").innerHTML = dieOut(y);
   document.getElementById("turnScore").innerHTML = score + " turn score";
   document.getElementById("whoPlaying").innerHTML = playerStr;
 }

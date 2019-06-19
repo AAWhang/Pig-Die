@@ -12,29 +12,47 @@
 
   <body>
     <div class="container">
-      <div class="">
-      <button type="click" id="roll">Roll Dice</button>
-      <button type="click" id="hold">Hold Dice</button>
-      <button type="click" id="reset">Reset</button>
-      <input type="radio" name="selectMode" id="game1" checked> Player vs Player</input>
-      <input type="radio" name="selectMode" id="game2"> Player vs CPU (Easy)</input>
-      <input type="radio" name="selectMode" id="game3"> Player vs CPU (Hard)</input>
+      <div class="row">
+        <div class="col-md-3" id="diebox">
+          <div id="dice1">
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div id="whoPlaying">
+          </div>
+          <div id="turnScore">
+          </div>
+        </div>
+          <div class="col-md-3">
+            <div id="dice2">
+            </div>
+          </div>
+        <div class="col-md-3">
+          <input type="radio" name="selectMode" id="game1" checked> Player vs Player</input>
+          <br>
+          <input type="radio" name="selectMode" id="game2"> Player vs CPU (Easy)</input>
+          <br>
+          <input type="radio" name="selectMode" id="game3"> Player vs CPU (Hard)</input>
+          <br>
+          <br>
+          <button type="click" id="reset">Reset</button>
+        </div>
+      </div>
 
-        <div id="dice1">
+      <div class="row">
+        <div class="col-md-6">
+          <button type="click" id="roll">Roll Dice</button>
+          <h4>Player 1</h4>
+          <div id="total">
+          </div>
         </div>
-        <div id="dice2">
+        <div class="col-md-4">
+          <button type="click" id="hold">Hold Dice</button>
+          <h4>Player 2</h4>
+          <div id="total2">
+          </div>
         </div>
-        <div id="turnScore">
-        </div>
-        <div id="whoPlaying">
-        </div>
-        <h4>p1</h4>
-        <div id="total">
-        </div>
-        <h4>p2</h4>
-        <div id="total2">
-        </div>
-
+      </div>
     </div>
   </body>
 </html>
