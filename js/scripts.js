@@ -63,6 +63,17 @@ function cpuH() {
         }
 }
 
+function modeselect() {
+  var mode = 0;
+  if (document.getElementById('game2').checked) {
+    cpuE();
+  } else if (document.getElementById('game3').checked)  {
+    cpuH();
+  }
+
+}
+
+
 function buttonRoll()
 {
   var x = Math.floor((Math.random() * 6) + 1);
@@ -99,18 +110,18 @@ function buttonHold() {
 }
 
   $("button#roll").click(function() {
-    buttonRoll()
-    // cpuE();
-    cpuH();
+    buttonRoll();
+    modeselect();
   });
 
   $("button#hold").click(function() {
-    buttonHold()
-      // cpuE();
-      cpuH();
+    buttonHold();
+    modeselect();
   });
 
-
+  $("button#reset").click(function() {
+    reset();
+  });
 
 
 
