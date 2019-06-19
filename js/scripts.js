@@ -27,47 +27,61 @@ function win() {
 
 function cpuE() {
   var cpuTurns;
-  if (players === 1) {
-    for (var i = 0; i <= 2; i++) {
-    buttonRoll();
-    }
-    buttonHold();
+      if (players === 1) {
+        for (var i = 0; i <= 2; i++) {
+          if (players === 1) {
+            buttonRoll();
+          }
+        }
+        if (players === 1) {
+          buttonHold();
+        }
   }
 }
 
-  $("button#roll").click(function buttonRoll() {
-    var x = Math.floor((Math.random() * 6) + 1);
-      var y = Math.floor((Math.random() * 6) + 1);
-    if (x === 1 || y === 1) {
-      score = 0;
-      playerSwap();
-    } else {
-      score += x;
-      score += y;
-    }
-    document.getElementById("dice1").innerHTML = x + " die 1";
-    document.getElementById("dice2").innerHTML = y + " die 2";
-    document.getElementById("turnScore").innerHTML = score + " turn score";
-    document.getElementById("whoPlaying").innerHTML = playerStr;
+function buttonRoll()
+{
+  var x = Math.floor((Math.random() * 6) + 1);
+    var y = Math.floor((Math.random() * 6) + 1);
+  if (x === 1 || y === 1) {
+    score = 0;
+    playerSwap();
+  } else {
+    score += x;
+    score += y;
+  }
+  document.getElementById("dice1").innerHTML = x + " die 1";
+  document.getElementById("dice2").innerHTML = y + " die 2";
+  document.getElementById("turnScore").innerHTML = score + " turn score";
+  document.getElementById("whoPlaying").innerHTML = playerStr;
+}
+
+function buttonHold() {
+  if (players === 0) {
+    total += score;
+    score = 0;
+    document.getElementById("turnScore").innerHTML = score;
+    document.getElementById("total").innerHTML = total;
+  } else {
+    total2 += score;
+    score = 0;
+    document.getElementById("turnScore").innerHTML = score;
+    document.getElementById("total2").innerHTML = total2;
+  }
+  playerSwap();
+  document.getElementById("whoPlaying").innerHTML = playerStr;
+  win();
+
+}
+
+  $("button#roll").click(function() {
+    buttonRoll()
     cpuE();
   });
 
-  $("button#hold").click(function buttonHold() {
-    if (players === 0) {
-      total += score;
-      score = 0;
-      document.getElementById("turnScore").innerHTML = score;
-      document.getElementById("total").innerHTML = total;
-    } else {
-      total2 += score;
-      score = 0;
-      document.getElementById("turnScore").innerHTML = score;
-      document.getElementById("total2").innerHTML = total2;
-    }
-    playerSwap();
-    document.getElementById("whoPlaying").innerHTML = playerStr;
-    win();
-    cpuE();
+  $("button#hold").click(function() {
+    buttonHold()
+      cpuE();
 
   });
 
