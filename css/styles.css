@@ -1,9 +1,18 @@
 body{
   background-color: pink;
+  font-size: 25px;
+  font-weight: bold;
 }
 img{
   margin: 10px;
   border: solid black;
+}
+h1 {
+  color: red;
+  background-color: black;
+  text-align: center;
+  font-size: 100px;
+  font-weight: bolder;
 }
 .jumbotron {
   padding: 2rem 1rem;

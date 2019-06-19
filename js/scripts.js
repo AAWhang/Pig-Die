@@ -56,7 +56,6 @@ function cpuH() {
   var cpuTurns;
         while (score < 20 && players === 1 && score + total2 < 100) {
             buttonRoll();
-
         }
         if (players === 1) {
           buttonHold();
